@@ -1,7 +1,9 @@
 import AdminSidebar from "./AdminSidebar";
 import "./Admin.scss";
 import { FaBars, FaSearch, FaBell, FaEnvelope, FaChevronRight } from 'react-icons/fa';
-import { FiBell, FiMail } from 'react-icons/fi';
+import { FiBell, FiMail, FiActivity } from 'react-icons/fi';
+import { BiCalendar } from 'react-icons/bi';
+import { IoIosSearch } from "react-icons/io";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,6 +19,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import DashboardCharts from "./Content/Chart/DashboardCharts";
 
 
 const Admin = () => {
@@ -25,7 +28,7 @@ const Admin = () => {
         <div className="admin-container">
             <div className="admin-header">
                 <nav className="navbar top-nav shadow navbar-expand justify-content-between justify-content-sm-start navbar-light bg-white"
-                    style={{ flexWrap: 'nowrap', zIndex: "1039", height: '3.625rem' }}
+                    style={{ flexWrap: 'nowrap', zIndex: "1039", height: '3.625rem', boxShadow: 'inset -4px 0px 6px -1px rgba(0, 0, 0, 0.1), 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15)' }}
                 >
                     <button onClick={() => { setCollapsed(!collapsed); }}
                         className="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0">
@@ -73,38 +76,39 @@ const Admin = () => {
                                     alignItems: 'center',
                                 }}
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                </svg>
+                                <IoIosSearch style={{ fontSize: '20px' }}></IoIosSearch>
                             </div>
                         </div>
                     </form>
 
-                    <ul className="navbar-nav align-items-center ms-auto me-3">
-                        <li className="nav-item dropdown no-caret d-none d-md-block me-3">
+                    <ul className="navbar-nav align-items-center ms-auto me-4 d-flex gap-3">
+                        <li className="nav-item d-none d-md-block">
                             <a className="me-3 text-decoration-none text-muted" href="#">
                                 Documentation <FaChevronRight style={{ fontSize: '10px' }} />
                             </a>
                         </li>
-                        <button onClick={() => { setCollapsed(!collapsed); }}
-                            className="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0">
-                            <FiBell style={{ fontSize: '14px' }} />
-                        </button>
-                        <button onClick={() => { setCollapsed(!collapsed); }}
-                            className="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0">
-                            <FiMail style={{ fontSize: '14px' }} />
-                        </button>
-                        <button onClick={() => { setCollapsed(!collapsed); }}
-                            className="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0">
-                            <img
-                                src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png"
-                                alt="User avatar"
-                                className="img-fluid"
-                            />
-                        </button>
-
+                        <li className="nav-item">
+                            <button
+                                className="btn btn-icon btn-transparent-dark">
+                                <FiBell style={{ fontSize: '14px' }} />
+                            </button>
+                        </li>
+                        <li className="nav-item">
+                            <button
+                                className="btn btn-icon btn-transparent-dark">
+                                <FiMail style={{ fontSize: '14px' }} />
+                            </button>
+                        </li>
+                        <li className="nav-item">
+                            <button className="custom-avatar-btn">
+                                <img
+                                    src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png"
+                                    alt="User avatar"
+                                />
+                            </button>
+                        </li>
                     </ul>
+
                 </nav>
 
             </div>
@@ -114,13 +118,34 @@ const Admin = () => {
                 </div>
                 <div className="admin-main">
                     <PerfectScrollbar>
-                        <div className="welcome-container d-flex align-items-center">
-                            <div class="container-xl px-4">
-                                <div class="welcome-banner text-center align-items-center">
-                                    <h1 class="text-white">Welcome to SB Admin Pro</h1>
-                                    <p class="lead mb-0 text-white-50">A professionally designed admin panel template built with Bootstrap 5</p>
+                        <div className="welcome-container d-flex align-items-center pb-10" style={{ backgroundColor: '#3a80ba' }}>
+                            <div className="container-xl px-4">
+                                <div className="page-header-content pt-4">
+                                    <div className="row align-items-center justify-content-between">
+                                        {/* Left Content: Welcome Banner */}
+                                        <div className="col-md-8">
+                                            <div className="welcome-banner ms-3">
+                                                <h1 className="text-white d-flex align-items-center">
+                                                    <FiActivity className="me-2" style={{ color: 'rgba(255, 255, 255, 0.5)' }} /> Dashboard
+                                                </h1>
+                                                <p className="lead mb-0 text-white-50">Example dashboard overview and content summary</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Right Content: Calendar Button */}
+                                        <div className="col-12 col-xl-auto mt-4 mt-xl-0">
+                                            <div>
+                                                <button className="btn btn-light">
+                                                    <BiCalendar className="me-2" /> Sep 30, 2024 - Sep 30, 2024
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className="container">
+                            <DashboardCharts></DashboardCharts>
                         </div>
                         <div className="dashboard-container px-4">
                             <div className="dashboard-header">

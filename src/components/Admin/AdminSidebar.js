@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiActivity } from 'react-icons/fi';
 import {
     ProSidebar,
     Menu,
@@ -11,6 +12,7 @@ import {
 import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
 import sidebarBg from '../../assets/bg2.jpg';
 import 'react-pro-sidebar/dist/css/styles.css';
+import './AdminSidebar.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
 const AdminSidebar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
@@ -47,15 +49,13 @@ const AdminSidebar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
             <SidebarContent>
                 <Menu iconShape="circle">
                     <MenuItem
-                        icon={<FaTachometerAlt />}
-                        suffix={<span className="badge red">New</span>}
-                    > <Link to="/admin" />
-                        Dashboard
+                    >
+                        Core
                     </MenuItem>
-                    <SubMenu title="Features" icon={<FaGem />}>
-                        <MenuItem>Quản lý Users <Link to="/admin/manage-user" /></MenuItem>
-                        <MenuItem>Quản lý bài Quiz <Link to="/admin/manage-quiz" /></MenuItem>
-                        <MenuItem>Quản lý câu hỏi <Link to="/admin/manage-question" /></MenuItem>
+                    <SubMenu title="Dashboards" icon={<FiActivity />}>
+                        <MenuItem>Default <Link to="/admin/manage-user" /></MenuItem>
+                        <MenuItem>Multiopurpose <Link to="/admin/manage-quiz" /></MenuItem>
+                        <MenuItem>Affiliate <Link to="/admin/manage-question" /></MenuItem>
                     </SubMenu>
                 </Menu>
                 <Menu iconShape="circle">
