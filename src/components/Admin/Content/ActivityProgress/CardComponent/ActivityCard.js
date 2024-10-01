@@ -1,11 +1,14 @@
 import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const ActivityCard = () => {
     return (
         <Card className='h-100'>
-            <Card.Header>Featured</Card.Header>
+            <Card.Header>Recent Activity
+                <button className='btn btn-transparent-dark btn-icon'><BsThreeDotsVertical></BsThreeDotsVertical></button>
+            </Card.Header>
             <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
                 <Card.Text>

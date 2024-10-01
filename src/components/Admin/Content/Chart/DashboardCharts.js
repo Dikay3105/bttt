@@ -1,6 +1,8 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2'; // For the line chart
 import { Bar } from 'react-chartjs-2'; // For the bar chart
+import { BsThreeDotsVertical } from "react-icons/bs";
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -54,29 +56,27 @@ const DashboardCharts = () => {
     };
 
     return (
-        <div className="container-xl px-4">
-            <div className="row g-4">
-                {/* Earnings Breakdown Chart */}
-                <div className="col-12 col-md-6">
-                    <div className="card shadow border-0">
-                        <div className="card-header">
-                            <h5 className="mb-0">Earnings Breakdown</h5>
-                        </div>
-                        <div className="card-body">
-                            <Line data={earningsData} options={{ responsive: true }} />
-                        </div>
+        <div className="row mb-4">
+            <div className="col-12 col-md-6">
+                <div className="card shadow border-0">
+                    <div className="card-header">
+                        <h5 className="mb-0">Earnings Breakdown</h5>
+                        <button className='btn btn-transparent-dark btn-icon'><BsThreeDotsVertical></BsThreeDotsVertical></button>
+                    </div>
+                    <div className="card-body">
+                        <Line data={earningsData} options={{ responsive: true }} />
                     </div>
                 </div>
+            </div>
 
-                {/* Monthly Revenue Chart */}
-                <div className="col-12 col-md-6">
-                    <div className="card shadow border-0">
-                        <div className="card-header">
-                            <h5 className="mb-0">Monthly Revenue</h5>
-                        </div>
-                        <div className="card-body">
-                            <Bar data={revenueData} options={{ responsive: true }} />
-                        </div>
+            <div className="col-12 col-md-6">
+                <div className="card shadow border-0">
+                    <div className="card-header">
+                        <h5 className="mb-0">Monthly Revenue</h5>
+                        <button className='btn btn-transparent-dark btn-icon'><BsThreeDotsVertical></BsThreeDotsVertical></button>
+                    </div>
+                    <div className="card-body">
+                        <Bar data={revenueData} options={{ responsive: true }} />
                     </div>
                 </div>
             </div>

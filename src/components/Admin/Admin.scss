@@ -121,31 +121,6 @@ $highlight-color: #dee2ec;
                     }
                 }
             }
-
-            .dashboard-container {
-                .dashboard-header {}
-
-                .dashboard-content {
-                    .card {
-                        margin-top: 30px;
-                    }
-                }
-
-            }
-
-            .app-page-container {
-                .app-page-header {}
-
-                .app-page-content {
-
-                    .card {
-                        margin-top: 30px;
-                        border: none !important;
-                        cursor: pointer;
-                        background-color: inherit !important;
-                    }
-                }
-            }
         }
     }
 }
@@ -213,4 +188,19 @@ $highlight-color: #dee2ec;
     --bs-btn-disabled-bg: rgba(33, 40, 50, 0.1);
     --bs-btn-disabled-border-color: transparent;
     color: rgba(33, 40, 50, 0.5) !important;
+}
+
+.mt-n10 {
+    margin-top: -6rem !important;
+}
+
+.card-header {
+    height: 3.5625rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5625rem !important;
+    padding-bottom: 0.5625rem !important;
+    font-weight: 600;
+    color: #0061f2 !important;
 }

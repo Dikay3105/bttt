@@ -13,12 +13,3 @@
         }
     }
 }
-
-.card-body {
-    flex-grow: 1;
-    /* Đảm bảo phần thân của thẻ chiếm hết chiều cao còn lại */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* Để nút Start Now nằm dưới cùng */
-}

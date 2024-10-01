@@ -46,3 +46,34 @@
         }
     }
 }
+
+.pro-sidebar {
+    /* Ẩn thanh cuộn mặc định */
+    overflow: hidden;
+
+    &:hover {
+        /* Hiển thị thanh cuộn khi hover vào */
+        overflow-y: auto;
+    }
+
+    /* Tùy chỉnh thanh cuộn */
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        /* Màu nền track */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.3);
+        /* Màu thanh cuộn */
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.5);
+        /* Màu khi hover vào thanh cuộn */
+    }
+}
