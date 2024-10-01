@@ -56,9 +56,9 @@ $highlight-color: #dee2ec;
         display: flex;
 
         .admin-sidebar {
-            .pro-sidebar {
-                height: 100vw !important;
-            }
+            height: calc(100vh - 3.675rem);
+
+            .pro-sidebar {}
 
             .sidebar-btn-wrapper {
                 display: flex;
@@ -98,7 +98,6 @@ $highlight-color: #dee2ec;
             float: left;
 
             .welcome-container {
-                height: 300px;
                 background-color: #0061f2 !important;
                 background-image: linear-gradient(135deg, #0061f2 0%, rgba(105, 0, 199, 0.8) 100%) !important;
                 padding-bottom: 10rem;
@@ -107,9 +106,19 @@ $highlight-color: #dee2ec;
                 .welcome-banner {
                     color: rgba(255, 255, 255, 0.5);
 
-                    .main-banner {}
+                    .main-banner {
+                        font-weight: 500;
+                        line-height: normal;
+                        font-size: 2.25rem;
+                        margin-bottom: 0;
+                    }
 
-                    .sub-banner {}
+                    .sub-banner {
+                        color: rgba(255, 255, 255, 0.5);
+                        font-size: 1.15rem;
+                        margin-top: 0.25rem;
+                        font-weight: 400;
+                    }
                 }
             }
 
@@ -131,6 +140,9 @@ $highlight-color: #dee2ec;
 
                     .card {
                         margin-top: 30px;
+                        border: none !important;
+                        cursor: pointer;
+                        background-color: inherit !important;
                     }
                 }
             }
@@ -138,19 +150,16 @@ $highlight-color: #dee2ec;
     }
 }
 
-.card {
-    border: none !important;
-    cursor: pointer;
-    background-color: inherit !important;
+// .card {
 
-    img {
-        &:hover {
-            box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
-            transform: translateY(-10px);
-            transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
-    }
-}
+//     img {
+//         &:hover {
+//             box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
+//             transform: translateY(-10px);
+//             transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+//         }
+//     }
+// }
 
 .navbar {
     .container {

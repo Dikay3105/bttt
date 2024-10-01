@@ -42,9 +42,9 @@ const App = () => {
   return (
     <>
       <div className={`app-container ${loading ? 'loading' : ''}`}>
-        {showHeader && <Header isAuthenticated={isAuthenticated} account={account} />}
+        {/* {showHeader && <Header isAuthenticated={isAuthenticated} account={account} />} */}
         <Routes>
-          <Route index element={<Home />} />
+          <Route index element={<Admin />} />
           <Route path="/user" element={<ListQuiz />} />
           <Route path="/quiz/:id" element={<DetailQuiz />} />
           <Route path="admin" element={<Admin />}>

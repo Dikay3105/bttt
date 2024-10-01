@@ -1,5 +1,11 @@
 import React from 'react';
-import { FiActivity } from 'react-icons/fi';
+import { FiActivity, FiGlobe, FiLayout, FiPackage } from 'react-icons/fi';
+import { AiOutlineAppstore } from "react-icons/ai";
+import { IoRepeat } from "react-icons/io5";
+import { LuBarChart, LuWrench } from "react-icons/lu";
+import { CiFilter } from "react-icons/ci";
+
+
 import {
     ProSidebar,
     Menu,
@@ -48,17 +54,99 @@ const AdminSidebar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
 
             <SidebarContent>
                 <Menu iconShape="circle">
-                    <MenuItem
-                    >
-                        Core
+                    <MenuItem>
+                        CORE
                     </MenuItem>
                     <SubMenu title="Dashboards" icon={<FiActivity />}>
-                        <MenuItem>Default <Link to="/admin/manage-user" /></MenuItem>
+                        <MenuItem suffix={<span className="badge bg-primary-soft text-primary ms-auto">Updated</span>}>Default <Link to="/admin/manage-user" /></MenuItem>
                         <MenuItem>Multiopurpose <Link to="/admin/manage-quiz" /></MenuItem>
                         <MenuItem>Affiliate <Link to="/admin/manage-question" /></MenuItem>
                     </SubMenu>
                 </Menu>
                 <Menu iconShape="circle">
+                    <MenuItem>
+                        CUSTOM
+                    </MenuItem>
+                    <SubMenu title="Pages" icon={<AiOutlineAppstore />}>
+                        <MenuItem>Accounts <Link to="/admin/manage-user" /></MenuItem>
+                        <MenuItem>Authentication <Link to="/admin/manage-quiz" /></MenuItem>
+                        <MenuItem>Error <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Pricing <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Invoice <Link to="/admin/manage-question" /></MenuItem>
+                    </SubMenu>
+                    <SubMenu title="Applications" icon={<FiGlobe />}>
+                        <MenuItem>Default <Link to="/admin/manage-user" /></MenuItem>
+                        <MenuItem>Multiopurpose <Link to="/admin/manage-quiz" /></MenuItem>
+                        <MenuItem>Affiliate <Link to="/admin/manage-question" /></MenuItem>
+                    </SubMenu>
+                    <SubMenu title="Flows" icon={<IoRepeat />}>
+                        <MenuItem>Knowledge Base <Link to="/admin/manage-user" /></MenuItem>
+                        <MenuItem>User Management <Link to="/admin/manage-quiz" /></MenuItem>
+                        <MenuItem>Posts Management <Link to="/admin/manage-question" /></MenuItem>
+                    </SubMenu>
+                </Menu>
+
+                <Menu iconShape="circle">
+                    <MenuItem>
+                        UI TOOLKIT
+                    </MenuItem>
+                    <SubMenu title="Layout" icon={<FiLayout />}>
+                        <SubMenu title="Navigation">
+                            <MenuItem>Static Sidenav <Link to="/admin/manage-user" /></MenuItem>
+                            <MenuItem>Dark Sidenav <Link to="/admin/manage-quiz" /></MenuItem>
+                            <MenuItem>RTL Layout <Link to="/admin/manage-question" /></MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Container Options">
+                            <MenuItem>Boxed Layout <Link to="/admin/manage-user" /></MenuItem>
+                            <MenuItem>Fluid Layout <Link to="/admin/manage-quiz" /></MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Page Headers">
+                            <MenuItem>Simplified <Link to="/admin/manage-user" /></MenuItem>
+                            <MenuItem>Compact <Link to="/admin/manage-quiz" /></MenuItem>
+                            <MenuItem>Content Overlap <Link to="/admin/manage-question" /></MenuItem>
+                            <MenuItem>Breadcrumbs <Link to="/admin/manage-question" /></MenuItem>
+                            <MenuItem>light <Link to="/admin/manage-question" /></MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Starter Layouts">
+                            <MenuItem>Default <Link to="/admin/manage-user" /></MenuItem>
+                            <MenuItem>Minimal <Link to="/admin/manage-quiz" /></MenuItem>
+                        </SubMenu>
+                    </SubMenu>
+                    <SubMenu title="Components" icon={<FiPackage />}>
+                        <MenuItem>Alerts <Link to="/admin/manage-user" /></MenuItem>
+                        <MenuItem>Avatars <Link to="/admin/manage-quiz" /></MenuItem>
+                        <MenuItem>Badges <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Buttons <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Cards <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Dropdowns <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Forms <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Modals <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Navigation <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Progress <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Timeline <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Toasts <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Tooltips <Link to="/admin/manage-question" /></MenuItem>
+                    </SubMenu>
+                    <SubMenu title="Utilities" icon={<LuWrench />}>
+                        <MenuItem>Animations <Link to="/admin/manage-user" /></MenuItem>
+                        <MenuItem>Background <Link to="/admin/manage-quiz" /></MenuItem>
+                        <MenuItem>Borders <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Lift <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Shadows <Link to="/admin/manage-question" /></MenuItem>
+                        <MenuItem>Typography <Link to="/admin/manage-question" /></MenuItem>
+                    </SubMenu>
+                </Menu>
+
+                <Menu iconShape="circle">
+                    <MenuItem suffix={<span className="badge red">New</span>}>
+                        PLUGINS
+                    </MenuItem>
+                    <SubMenu title="Charts" icon={<LuBarChart />}>
+                    </SubMenu>
+                    <SubMenu title="Tables" icon={<CiFilter />}>
+                    </SubMenu>
+                </Menu>
+                {/* <Menu iconShape="circle">
                     <SubMenu
                         suffix={<span className="badge yellow">3</span>}
                         icon={<FaRegLaughWink />}
@@ -75,32 +163,27 @@ const AdminSidebar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
                         <MenuItem>2</MenuItem>
                         <MenuItem>3</MenuItem>
                     </SubMenu>
-                </Menu>
+                </Menu> */}
             </SidebarContent>
 
             <SidebarFooter style={{ textAlign: 'center' }}>
                 <div
-                    className="sidebar-btn-wrapper"
+                    className="sidebar-footer-container d-flex"
                     style={{
-                        padding: '20px 24px',
+                        backgroundColor: 'rgba(33, 40, 50, 0.05)'
                     }}
                 >
-                    <a
-                        href="https://github.com/azouaoui-med/react-pro-sidebar"
-                        target="_blank"
-                        className="sidebar-btn"
-                        rel="noopener noreferrer"
-                    >
-                        <FaGithub />
-                        {!collapsed && (
-                            <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                                viewSource
-                            </span>
-                        )}
-                    </a>
+                    <div className='sidebar-footer-content'>
+                        <div className='sidebar-footer-subtitle'>
+                            Logged in as:
+                        </div>
+                        <div className='sidebar-login-name'>
+                            Valerie Luna
+                        </div>
+                    </div>
                 </div>
             </SidebarFooter>
-        </ProSidebar>
+        </ProSidebar >
     );
 };
 

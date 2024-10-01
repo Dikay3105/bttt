@@ -28,15 +28,15 @@ ChartJS.register(
 const DashboardCharts = () => {
     // Sample data for Earnings Breakdown (Line Chart)
     const earningsData = {
-        labels: ['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov'],
+        labels: ['Jan', '', 'Mar', '', 'May', '', 'Jul', '', 'Sep', '', 'Nov', ''],
         datasets: [
             {
                 label: 'Earnings Breakdown',
-                data: [0, 10000, 20000, 30000, 25000, 40000],
+                data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 35000],
                 borderColor: 'blue',
                 backgroundColor: 'rgba(0, 123, 255, 0.2)',
                 fill: true,
-                tension: 0.1,
+                tension: 0.5,
             },
         ],
     };

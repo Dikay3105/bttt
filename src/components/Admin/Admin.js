@@ -20,6 +20,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import DashboardCharts from "./Content/Chart/DashboardCharts";
+import ActivityProgress from "./Content/ActivityProgress/ActivityProgress";
 
 
 const Admin = () => {
@@ -60,11 +61,11 @@ const Admin = () => {
                                 placeholder="Search"
                                 aria-label="Search"
                                 style={{
-                                    borderRadius: '10px 0 0 10px', // Làm tròn chỉ ở phía trái
+                                    borderRadius: '10px 0 0 10px',
                                     backgroundColor: 'inherit',
                                     border: '0px',
                                     height: '100%',
-                                    flex: 1 // Giúp input chiếm hết chiều rộng còn lại
+                                    flex: 1
                                 }}
                             />
                             <div className="input-group-text"
@@ -74,6 +75,7 @@ const Admin = () => {
                                     padding: '0 10px',
                                     display: 'flex',
                                     alignItems: 'center',
+                                    color: '#69707a'
                                 }}
                             >
                                 <IoIosSearch style={{ fontSize: '20px' }}></IoIosSearch>
@@ -114,7 +116,9 @@ const Admin = () => {
             </div>
             <div className="admin-content">
                 <div className="admin-sidebar">
-                    <AdminSidebar collapsed={collapsed}></AdminSidebar>
+                    <PerfectScrollbar>
+                        <AdminSidebar collapsed={collapsed}></AdminSidebar>
+                    </PerfectScrollbar>
                 </div>
                 <div className="admin-main">
                     <PerfectScrollbar>
@@ -122,17 +126,18 @@ const Admin = () => {
                             <div className="container-xl px-4">
                                 <div className="page-header-content pt-4">
                                     <div className="row align-items-center justify-content-between">
-                                        {/* Left Content: Welcome Banner */}
-                                        <div className="col-md-8">
+                                        <div className="col-auto mt-4">
                                             <div className="welcome-banner ms-3">
-                                                <h1 className="text-white d-flex align-items-center">
-                                                    <FiActivity className="me-2" style={{ color: 'rgba(255, 255, 255, 0.5)' }} /> Dashboard
+                                                <h1 className="main-banner text-white d-flex align-items-center">
+                                                    <div style={{ display: 'inline-flex' }}>
+                                                        <FiActivity className="me-2" style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '30px' }} />
+                                                    </div>
+                                                    Dashboard
                                                 </h1>
-                                                <p className="lead mb-0 text-white-50">Example dashboard overview and content summary</p>
+                                                <p className="sub-banner lead mb-0 text-white-50">Example dashboard overview and content summary</p>
                                             </div>
                                         </div>
 
-                                        {/* Right Content: Calendar Button */}
                                         <div className="col-12 col-xl-auto mt-4 mt-xl-0">
                                             <div>
                                                 <button className="btn btn-light">
@@ -144,6 +149,7 @@ const Admin = () => {
                                 </div>
                             </div>
                         </div>
+                        <ActivityProgress></ActivityProgress>
                         <div className="container">
                             <DashboardCharts></DashboardCharts>
                         </div>

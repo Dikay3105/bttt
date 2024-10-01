@@ -7,5 +7,42 @@
 }
 
 .pro-sidebar .pro-menu .pro-menu-item {
-    border-left: 1px solid black;
+    border-left: 1px solid #d4dae3;
+}
+
+.pro-sidebar .pro-menu.shaped .pro-menu-item>.pro-inner-item>.pro-icon-wrapper {
+    background-color: inherit !important;
+}
+
+.bg-primary-soft {
+    --bs-bg-opacity: 1;
+    background-color: rgba(218, 231, 251, var(--bs-bg-opacity)) !important;
+}
+
+.pro-sidebar .pro-menu>ul>.pro-sub-menu>.pro-inner-list-item>div>ul {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.sidebar-footer-container {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+
+    .sidebar-footer-content {
+        font-size: 0.9rem;
+
+        .sidear-footer-subtitle {
+            font-size: 0.75rem;
+            color: #69707a;
+        }
+
+        .sidebar-login-name {
+            font-weight: 600;
+            color: #212832;
+        }
+    }
 }
